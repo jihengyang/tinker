@@ -33,7 +33,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tv_message"
-        android:text="load patch"/>
+        android:text="load patch" />
 
     <Button
         android:id="@+id/loadLibrary"
