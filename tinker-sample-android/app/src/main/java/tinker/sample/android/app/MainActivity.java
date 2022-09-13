@@ -31,6 +31,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Log.e(TAG, "i am on onCreate classloader:" + MainActivity.class.getClassLoader().toString());
         //test resource change
         Log.e(TAG, "i am on onCreate string:" + getResources().getString(R.string.test_resource));
+        Toast.makeText(this, "i am at patch", Toast.LENGTH_LONG).show();
 //        Log.e(TAG, "i am on patch onCreate");
 
         mTvMessage = findViewById(R.id.tv_message);
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         loadPatchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), Environment.getExternalStorageDirectory().getAbsolutePath() + "/patch_signed_7zip.apk");
+                TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), Environment.getExternalStorageDirectory().getAbsolutePath() + "/app-debug-patch_signed_7zip.apk");
             }
         });
 

@@ -4,6 +4,11 @@ buildscript {
         mavenLocal()
         jcenter()
         google()
+        maven { url "https://mirrors.tencent.com/repository/maven/thirdparty/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public_snapshots/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/thirdparty-snapshots/" }
+        maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public/" }
     }
     dependencies {
         if (project.hasProperty('GRADLE_3') && GRADLE_3.equalsIgnoreCase('TRUE')) {
@@ -15,6 +20,7 @@ buildscript {
             changing = TINKER_VERSION?.endsWith("-SNAPSHOT")
             exclude group: 'com.android.tools.build', module: 'gradle'
         }
+        classpath 'com.didichuxing.tools:droidassist:1.1.1'
     }
     configurations.all {
         it.resolutionStrategy.cacheDynamicVersionsFor(5, 'minutes')
@@ -27,6 +33,11 @@ allprojects {
         mavenLocal()
         jcenter()
         google()
+        maven { url "https://mirrors.tencent.com/repository/maven/thirdparty/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public_snapshots/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/thirdparty-snapshots/" }
+        maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public/" }
     }
 }
 

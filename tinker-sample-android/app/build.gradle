@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.didichuxing.tools.droidassist'
 
 dependencies {
     if (is_gradle_3()) {
@@ -155,7 +156,7 @@ ext {
 
     //for normal build
     //old apk file to build patch apk
-    tinkerOldApkPath = "${bakPath}/app-debug-0612-17-18-22.apk"
+    tinkerOldApkPath = "${bakPath}/app-debug-0912-19-49-37.apk"
     //proguard mapping file to build patch apk
     tinkerApplyMappingPath = "${bakPath}/app-debug-1018-17-32-47-mapping.txt"
     //resource R.txt to build patch apk, must input if there is resource changed
@@ -188,6 +189,10 @@ def buildWithTinker() {
 
 def getTinkerBuildFlavorDirectory() {
     return ext.tinkerBuildFlavorDirectory
+}
+
+droidAssistOptions {
+    config file("./script/test_asm.xml") //插件配置文件(必选配置,支持多配置文件)
 }
 
 if (buildWithTinker()) {
@@ -522,3 +527,5 @@ task sortPublicTxt() {
         }
     }
 }
+
+

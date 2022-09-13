@@ -67,11 +67,11 @@ public class SystemClassLoaderAdder {
             sPatchDexCount = files.size();
             ShareTinkerLog.i(TAG, "after loaded classloader: " + classLoader + ", dex size:" + sPatchDexCount);
 
-            if (!checkDexInstall(classLoader)) {
-                //reset patch dex
-                SystemClassLoaderAdder.uninstallPatchDex(classLoader);
-                throw new TinkerRuntimeException(ShareConstants.CHECK_DEX_INSTALL_FAIL);
-            }
+//            if (!checkDexInstall(classLoader)) {
+//                //reset patch dex
+//                SystemClassLoaderAdder.uninstallPatchDex(classLoader);
+//                throw new TinkerRuntimeException(ShareConstants.CHECK_DEX_INSTALL_FAIL);
+//            }
         }
     }
 
